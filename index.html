@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Failure Predictor</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f9ff;
+        text-align: center;
+        padding: 40px;
+    }
+    form {
+        display: inline-block;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+        margin: 10px 0;
+        padding: 10px;
+        width: 250px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #0077cc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    .result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Heart Failure Prediction</h1>
+  <form action="/predict" method="post">
+    <input type="text" name="age" placeholder="Age" required><br>
+    <input type="text" name="sex" placeholder="Sex (1=Male, 0=Female)" required><br>
+    <input type="text" name="cp" placeholder="Chest Pain Type" required><br>
+    <input type="text" name="trestbps" placeholder="Resting BP" required><br>
+    <input type="text" name="chol" placeholder="Cholesterol" required><br>
+    <input type="text" name="fbs" placeholder="Fasting Blood Sugar (1/0)" required><br>
+    <input type="text" name="restecg" placeholder="Resting ECG" required><br>
+    <input type="text" name="thalach" placeholder="Max Heart Rate" required><br>
+    <input type="text" name="exang" placeholder="Exercise Angina (1/0)" required><br>
+    <input type="text" name="oldpeak" placeholder="Oldpeak" required><br>
+    <input type="text" name="slope" placeholder="Slope" required><br>
+    <input type="text" name="ca" placeholder="Vessels Colored (0–3)" required><br>
+    <input type="text" name="thal" placeholder="Thal (1–3)" required><br>
+    <input type="submit" value="Predict">
+  </form>
+  {% if prediction_text %}
+  <div class="result">{{ prediction_text }}</div>
+  {% endif %}
+</body>
+</html>

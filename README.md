@@ -1,14 +1,73 @@
-# ❤️ Heart Failure Prediction Web App
+# Heart Failure Prediction Web App
 
-This project is a Flask web application that predicts whether a person is at risk of heart failure based on health data. The machine learning model is trained using the [Heart Failure Clinical Records Dataset](https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data).
+This is a simple Flask-based web application that predicts the likelihood of heart failure using a machine learning model trained on health data.
 
----
+## 🧠 Model
 
-## 🚀 Demo
+The model used is a **Random Forest Classifier** trained on clinical data such as:
+- Age
+- Gender
+- Chest Pain Type
+- Resting Blood Pressure
+- Cholesterol
+- Fasting Blood Sugar
+- ECG Results
+- Maximum Heart Rate Achieved
+- Exercise-induced Angina
+- ST Depression
+- Slope of the Peak Exercise ST Segment
+- Number of Major Vessels Colored
+- Thalassemia
 
-You can run the app locally and access it via `http://127.0.0.1:5000`.
+Model is saved as `model.pkl`.
 
----
+## 🖥️ Tech Stack
+
+- Python 3
+- Flask
+- HTML/CSS
+- Scikit-learn
+- Joblib
 
 ## 📂 Project Structure
 
+```
+HeartFailureApp/
+├── app.py
+├── model.pkl
+├── templates/
+│   └── index.html
+└── README.md
+```
+
+## 🚀 Running Locally
+
+1. Clone or download this repository
+2. Navigate to the project folder
+3. Install required packages:
+
+```bash
+pip install flask joblib scikit-learn
+```
+
+4. Start the app:
+
+```bash
+python app.py
+```
+
+5. Open your browser and go to `http://127.0.0.1:5000`
+
+## 🔍 Prediction
+
+Input patient features on the homepage form. Based on the model prediction, it will return:
+- **Heart Disease Detected** or
+- **No Heart Disease Detected**
+
+## 📸 Screenshots
+
+Feel free to add screenshots of the interface here.
+
+---
+
+Developed as part of a machine learning bootcamp project.
